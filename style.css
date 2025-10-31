@@ -1,0 +1,211 @@
+/* GLOBAL STYLES & RESET */
+:root {
+    --primary-color: #000000;
+    /* Biru Profesional */
+    --secondary-color: rgb(255, 255, 255);
+    /* Latar Belakang Cerah */
+    --text-color: #343a40;
+    /* Hitam Gelap */
+    --font-heading: 'Roboto', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #ffffff;
+    padding-top: 50px;
+    /* Jaga jarak dari header/nav jika ada */
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    margin-bottom: 0.5em;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* HEADER & PROFILE PHOTO */
+.main-header {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: var(--secondary-color);
+    border-bottom: 5px solid var(--primary-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    /* Membuat foto berbentuk lingkaran */
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 5px solid #ffffff;
+    /* Border putih yang elegan */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    /* Animasi Hover Ringan */
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile-photo:hover {
+    transform: scale(1.05);
+}
+
+.profesi {
+    color: #6c757d;
+    font-size: 1.1em;
+}
+
+/* MAIN CONTENT SECTIONS */
+main {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.section-content {
+    padding: 40px 0;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.section-content:last-child {
+    border-bottom: none;
+}
+
+/* Animasi Fade-in saat halaman dimuat (untuk kesan modern) */
+.section-content {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.8s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Penundaan animasi untuk setiap bagian */
+#profil-singkat {
+    animation-delay: 0.2s;
+}
+
+#pendidikan {
+    animation-delay: 0.4s;
+}
+
+#pengalaman {
+    animation-delay: 0.6s;
+}
+
+#keahlian {
+    animation-delay: 0.8s;
+}
+
+#sertifikasi {
+    animation-delay: 1s;
+}
+
+/* CARD STYLES (Pendidikan/Pengalaman) */
+.item-card {
+    background-color: #fff;
+    border-left: 5px solid var(--primary-color);
+    padding: 20px;
+    margin-top: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.item-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateX(5px);
+}
+
+.item-card .detail {
+    color: #6c757d;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+/* SKILLS & CERTIFICATES */
+.skills-group {
+    margin-bottom: 20px;
+}
+
+.skill-list, .certificate-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-list li, .certificate-list li {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    /* Efek 3D mini saat hover */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.skill-list li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.certificate-list li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--text-color);
+    color: white;
+    margin-top: 30px;
+    font-size: 0.9em;
+}
+
+@media (max-width: 768px) {
+
+    .main-header {
+        padding: 30px 10px;
+    }
+
+    main {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+
+    .skill-list, .certificate-list {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
